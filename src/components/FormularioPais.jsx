@@ -7,8 +7,22 @@ const FormularioPais = () =>{
 
     const { register, handleSubmit, formState: { errors }, } = useForm();
 
-    const apretarBuscar = () => {
-
+    const apretarBuscar = async ({ciudad, pais}) => {
+        try{
+            const respuesta = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=29c60d6351839ff803cf2a378296a9e9`)
+            const data = await respuesta.json()
+            
+            if(data.cod === "404"){
+                console.log("Nombre de ciudad incorrecto")
+                return;
+            }else{
+                console.log(data)
+                setClima(data)
+            }
+        } catch(error){
+            console.log(error)
+        }
+        console.log("probando")
     }
     return(
         <section className="my-4">
