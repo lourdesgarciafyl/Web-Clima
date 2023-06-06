@@ -8,3 +8,7 @@
 #containerPrincipal{
   flex-grow: 1;
 }
+.container-wrapper {
+  max-width: 500px; 
+  margin: 0 auto;
+}
