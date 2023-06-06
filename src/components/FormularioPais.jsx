@@ -6,7 +6,7 @@ import CardClima from "./CardClima";
 
 
 const FormularioPais = () =>{
-    const [clima, setClima] = useState()
+    const [clima, setClima] = useState({})
 
     const { register, handleSubmit, formState: { errors }, } = useForm();
 
