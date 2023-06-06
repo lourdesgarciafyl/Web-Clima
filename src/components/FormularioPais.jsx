@@ -1,6 +1,7 @@
 import { Button, Form, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import Swal from 'sweetalert2'
 
 const FormularioPais = () =>{
     const [clima, setClima] = useState()
@@ -14,6 +15,12 @@ const FormularioPais = () =>{
             
             if(data.cod === "404"){
                 console.log("Nombre de ciudad incorrecto")
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Asegurate de que la ciudad ingresada coincida con el país seleccionado.',
+                    icon: 'error',
+                    confirmButtonText: 'Volver al formulario'
+                  })
                 return;
             }else{
                 console.log(data)
