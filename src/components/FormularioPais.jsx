@@ -2,6 +2,8 @@ import { Button, Form, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import Swal from 'sweetalert2'
+import CardClima from "./CardClima";
+
 
 const FormularioPais = () =>{
     const [clima, setClima] = useState()
@@ -25,6 +27,7 @@ const FormularioPais = () =>{
             }else{
                 console.log(data)
                 setClima(data)
+                console.log(clima)
             }
         } catch(error){
             console.log(error)
@@ -74,6 +77,7 @@ const FormularioPais = () =>{
                     </Form>
                 </Card.Body>
             </Card>
+            <CardClima clima={clima}></CardClima>
         </section>
     )
 }
