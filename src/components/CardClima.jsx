@@ -2,7 +2,6 @@ import { Card } from "react-bootstrap"
 
 const CardClima = ({ clima }) => {
     const{name, main:{temp, temp_max, temp_min}} = clima
-
     const kevinACentigrados = (temperatura) => parseInt(temperatura - 273.15);
 
     return(
